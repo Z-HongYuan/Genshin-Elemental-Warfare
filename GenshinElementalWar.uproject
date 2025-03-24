@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{6537CB4D-4248-A333-FFCB-AF9FA4FA3135}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "GenshinElementalWar",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}
