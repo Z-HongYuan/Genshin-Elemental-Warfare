@@ -7,7 +7,7 @@
 #include "GenshinGameInstance.generated.h"
 
 /**
- * 
+ * 还没想好有什么用途
  */
 UCLASS()
 class GENSHINELEMENTALWAR_API UGenshinGameInstance : public UGameInstance
