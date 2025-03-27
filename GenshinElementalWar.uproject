@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{6537CB4D-4248-A333-FFCB-AF9FA4FA3135}",
+	"EngineAssociation": "5.5",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -11,7 +11,11 @@
 			"AdditionalDependencies": [
 				"Engine",
 				"GameplayAbilities",
-				"EnhancedInput"
+				"EnhancedInput",
+				"AIModule",
+				"CoreUObject",
+				"UMG",
+				"ChaosVehicles"
 			]
 		}
 	],
@@ -64,5 +68,9 @@
 			"Name": "ChaosVehiclesPlugin",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Android",
+		"Windows"
 	]
 }
