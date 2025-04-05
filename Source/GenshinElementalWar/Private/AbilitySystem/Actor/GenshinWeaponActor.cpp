@@ -17,6 +17,8 @@ void AGenshinWeaponActor::AddAbilities()
 {
 	if (!IsValid(OwningCharacter) || !OwningCharacter->GetAbilitySystemComponent())
 	{
+		//log
+		UE_LOG(LogTemp,Warning,TEXT("WeaponActor::AddAbilities() : OwningCharacter or OwningCharacter->GetAbilitySystemComponent() is nullptr"));
 		return;	//防止空指针
 	}
 	if (UGenshinAbilitySystemComponent* ASC = Cast<UGenshinAbilitySystemComponent>(OwningCharacter->GetAbilitySystemComponent()))
@@ -33,6 +35,8 @@ void AGenshinWeaponActor::RemoveAbilities()
 {
 	if (!IsValid(OwningCharacter) || !OwningCharacter->GetAbilitySystemComponent())
 	{
+		//log
+		UE_LOG(LogTemp,Warning,TEXT("AGenshinWeaponActor::RemoveAbilities() : OwningCharacter or OwningCharacter->GetAbilitySystemComponent() is nullptr"));
 		return;	//防止空指针
 	}
 	if (UGenshinAbilitySystemComponent* ASC = Cast<UGenshinAbilitySystemComponent>(OwningCharacter->GetAbilitySystemComponent()))
@@ -58,6 +62,9 @@ void AGenshinWeaponActor::SetOwningCharacter(AGenshinCharacterBase* InOwningChar
 		AbilitySystem = nullptr;
 		SetOwner(nullptr);
 		DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+		
+		//log
+		UE_LOG(LogTemp,Warning,TEXT("AGenshinWeaponActor::SetOwningCharacter() : InOwningCharacter is nullptr"));
 	}
 }
 
