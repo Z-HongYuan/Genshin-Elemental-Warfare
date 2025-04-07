@@ -7,3 +7,6 @@
 # 保留 Content 文件夹及其内容
 !Content/
 !Content/...
+
+__ExternalActors__
+__ExternalObjects__
