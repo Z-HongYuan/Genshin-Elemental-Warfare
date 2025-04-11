@@ -1,0 +1,4 @@
+P4PORT=115.175.76.50:8848
+P4USER=ZHY
+P4CLIENT=GenshinElementalWarfare
+P4IGNORE=.p4ignore.txt
