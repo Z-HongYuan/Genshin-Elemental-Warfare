@@ -40,7 +40,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Weapon")
 	virtual USkeletalMeshComponent* GetWeaponMesh() const{return WeaponMesh;}
 	
-	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override{return AbilitySystem;}
+	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override{return AbilitySystem.Get();}
 	
 	//设置拥有者
 	void SetOwningCharacter(AGenshinCharacterBase* InOwningCharacter);
@@ -76,11 +76,11 @@ protected:
 	
 	//自己并不附带ASC组件,需要使用Owner的ASC填充Ptr
 	UPROPERTY(BlueprintReadOnly, VisibleInstanceOnly, Category = "Weapon")
-	TObjectPtr<UGenshinAbilitySystemComponent> AbilitySystem;
+	TWeakObjectPtr<UGenshinAbilitySystemComponent> AbilitySystem;
 
 	//拥有者
 	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
-	TObjectPtr<AGenshinCharacterBase> OwningCharacter;
+	TWeakObjectPtr<AGenshinCharacterBase> OwningCharacter;
 	
 	//当前使用的射击模式
 	UPROPERTY(BlueprintReadWrite, VisibleInstanceOnly, Category = "Weapon")
