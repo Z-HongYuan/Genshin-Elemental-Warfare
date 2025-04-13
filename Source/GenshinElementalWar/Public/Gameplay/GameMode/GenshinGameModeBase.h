@@ -13,5 +13,8 @@ UCLASS()
 class GENSHINELEMENTALWAR_API AGenshinGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	AGenshinGameModeBase();
 	
 };

@@ -3,3 +3,9 @@
 
 #include "Gameplay/GameMode/GenshinGameModeBase.h"
 
+AGenshinGameModeBase::AGenshinGameModeBase()
+{
+	PrimaryActorTick.bCanEverTick = true;
+	
+	bUseSeamlessTravel = true;
+}
