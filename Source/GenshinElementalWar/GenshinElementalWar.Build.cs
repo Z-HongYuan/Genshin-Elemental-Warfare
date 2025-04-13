@@ -12,7 +12,7 @@ public class GenshinElementalWar : ModuleRules
 		{
 			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",
 			"GameplayAbilities", "GameplayTags", "GameplayTasks",
-			"GameplayDebugger"
+			"GameplayDebugger", "GameplayCameras"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
