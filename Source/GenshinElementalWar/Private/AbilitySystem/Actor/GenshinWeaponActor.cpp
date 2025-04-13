@@ -21,18 +21,21 @@ void AGenshinWeaponActor::AddAbilities()
 		UE_LOG(LogTemp,Warning,TEXT("WeaponActor::AddAbilities() : OwningCharacter or AbilitySystem.Get() is nullptr"));
 		return;	//防止空指针
 	}
-	
-	for (TSubclassOf<UGenshinGameplayAbilityBase> Ability : Abilities)
+
+	//服务端Give
+	if (GetNetMode() == NM_DedicatedServer or GetNetMode() == NM_ListenServer)
 	{
-		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(Ability,0, -1,this);
-		AbilitySpecHandles.Add(AbilitySystem.Get()->GiveAbilityWithTag(AbilitySpec));
+		for (TSubclassOf<UGenshinGameplayAbilityBase> Ability : Abilities)
+		{
+			FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(Ability,0, -1,this);
+			AbilitySpecHandles.Add(AbilitySystem.Get()->GiveAbilityWithTag(AbilitySpec));
+		}
 	}
-	
 }
 
 void AGenshinWeaponActor::RemoveAbilities()
 {
-	if (!OwningCharacter.IsValid() || !AbilitySystem.Get())
+	if (!OwningCharacter.IsValid() or !AbilitySystem.Get())
 	{
 		//log
 		UE_LOG(LogTemp,Warning,TEXT("AGenshinWeaponActor::RemoveAbilities() : OwningCharacter or AbilitySystem.Get() is nullptr"));
