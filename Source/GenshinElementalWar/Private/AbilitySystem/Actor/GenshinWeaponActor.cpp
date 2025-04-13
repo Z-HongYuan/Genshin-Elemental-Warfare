@@ -23,9 +23,9 @@ void AGenshinWeaponActor::AddAbilities()
 	}
 
 	//服务端Give
-	if (GetNetMode() == NM_DedicatedServer or GetNetMode() == NM_ListenServer)
+	if (HasAuthority())
 	{
-		for (TSubclassOf<UGenshinGameplayAbilityBase> Ability : Abilities)
+		for (TSubclassOf<UGenshinGameplayAbilityBase>& Ability : Abilities)
 		{
 			FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(Ability,0, -1,this);
 			AbilitySpecHandles.Add(AbilitySystem.Get()->GiveAbilityWithTag(AbilitySpec));
@@ -53,7 +53,7 @@ void AGenshinWeaponActor::SetOwningCharacter(AGenshinCharacterBase* InOwningChar
 {
 	if(InOwningCharacter)
 	{
-		OwningCharacter=InOwningCharacter;
+		OwningCharacter = InOwningCharacter;
 		AbilitySystem = InOwningCharacter->GetAbilitySystemComponent();	//设置武器的ASC为角色的ASC
 		SetOwner(OwningCharacter.Get());	//设置武器的拥有者
 		AttachToComponent(OwningCharacter.Get()->GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);	//附加Actor到Character上
