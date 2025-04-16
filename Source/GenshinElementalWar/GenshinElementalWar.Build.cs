@@ -10,9 +10,11 @@ public class GenshinElementalWar : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
-			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",
-			"GameplayAbilities", "GameplayTags", "GameplayTasks",
-			"GameplayDebugger", "GameplayCameras"
+			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput",	//基本的引擎模块
+			"GameplayAbilities", "GameplayTags", "GameplayTasks",	//用于游戏能力系统
+			"GameplayDebugger",	//用于游戏调试
+			"GameplayCameras",	//用于游戏相机
+			"OnlineSubsystem", "OnlineSubsystemSteam"	//在线子系统,用于联网
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
