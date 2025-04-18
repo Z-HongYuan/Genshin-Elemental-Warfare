@@ -14,7 +14,7 @@ public class GenshinElementalWar : ModuleRules
 			"GameplayAbilities", "GameplayTags", "GameplayTasks",	//用于游戏能力系统
 			"GameplayDebugger",	//用于游戏调试
 			"GameplayCameras",	//用于游戏相机
-			"OnlineSubsystem", "OnlineSubsystemSteam"	//在线子系统,用于联网
+			"SteamMultiple"	//在线子系统,用于联网
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

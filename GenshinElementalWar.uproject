@@ -118,7 +118,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "OnlineSubsystemSteam",
+			"Name": "SteamMultiple",
 			"Enabled": true
 		}
 	],
